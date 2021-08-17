@@ -16,7 +16,7 @@ function App() {
             </li>
 
             <li className="navbar-item">
-            <Link to="/create" className="nav-link">Create Todo</Link>
+              <Link to="/create" className="nav-link">Create Todo</Link>
             </li>
           </ul>
         </nav>
