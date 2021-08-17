@@ -1,12 +1,18 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useHistory } from 'react-router-dom';
 
 export const CreateTodo = () => {
 
   const {register, handleSubmit} = useForm();
-  
-  const onSubmit = (data) => console.log(data);
 
+  const history = useHistory();
+  
+  const onSubmit = handleSubmit((data) => {
+    console.log(data);
+    alert(JSON.stringify(data));
+    history.push('/');
+  });
   return (
         <div className="container">
           <div className="mt-3">
