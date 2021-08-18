@@ -20,13 +20,13 @@ export const CreateTodo = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="form-group">
                 <label htmlFor="text">Text: </label>
-                <input {...register("text")} type="text" name="text" id="text" className="form-control"/>
+                <input {...register("text")} type="text" name="text" id="text" className="form-control" auto-complete="off"/>
               </div>
               <div className="form-group">
                 <button type="submit" className="btn btn-primary">Create Todo</button>
               </div>
             </form>
           </div>
-         </div>
+        </div>
   );
 };
