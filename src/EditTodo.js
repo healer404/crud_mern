@@ -1,15 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useForm } from 'react-hook-form';
-import { useHistory } from 'react-router-dom';
+import {TodoForm} from "./TodoForm";
 
 export const EditTodo = () => {
   const [todo, setTodo] = useState();
-
-  const {register, handleSubmit} = useForm({
-    defaultValues: { text: todo ? todo.text : "" },
-  });
-
-  const history = useHistory();
 
   useEffect(() => {
     setTodo({
@@ -17,25 +10,16 @@ export const EditTodo = () => {
     });
   }, []);
 
-  const onSubmit = handleSubmit((data) => {
-    console.log(data);
+  const onSubmit = (data) => {
     alert(JSON.stringify(data));
-    history.push('/');
-  });
-  return (
+  }
+
+  return todo ? (
       <div className="container">
         <div className="mt-3">
           <h3>Edit ToDo Item</h3>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="form-group">
-              <label htmlFor="text">Text: </label>
-              <input {...register("text")} type="text" name="text" id="text" className="form-control"/>
-            </div>
-            <div className="form-group">
-              <button type="submit" className="btn btn-primary">Create Todo</button>
-            </div>
-          </form>
+          <TodoForm todo={todo} onSubmit={onSubmit}></TodoForm>
         </div>
       </div>
-  );
+  ) : <div>Loading...</div>
 };
