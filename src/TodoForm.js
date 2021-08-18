@@ -21,7 +21,7 @@ export const TodoForm = ({todo, onSubmit }) => {
                 <input {...register("text")} type="text" name="text" id="text" className="form-control"/>
             </div>
             <div className="form-group">
-                <button type="submit" className="btn btn-primary">Create Todo</button>
+                <button type="submit" className="btn btn-primary">Save Todo</button>
             </div>
         </form>
     );
