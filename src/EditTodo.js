@@ -7,7 +7,7 @@ export const EditTodo = () => {
   useEffect(() => {
     setTodo({
       text: 'food'
-    });
+    })
   }, []);
 
   const onSubmit = (data) => {
@@ -21,5 +21,5 @@ export const EditTodo = () => {
           <TodoForm todo={todo} onSubmit={onSubmit}></TodoForm>
         </div>
       </div>
-  ) : <div>Loading...</div>
+  ) : (<div>Loading...</div>)
 };

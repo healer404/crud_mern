@@ -15,7 +15,7 @@ export const TodoForm = ({todo, onSubmit }) => {
     });
 
     return (
-        <form onSubmit={handleSubmit(submitHandler)}>
+        <form onSubmit={submitHandler}>
             <div className="form-group">
                 <label htmlFor="text">Text: </label>
                 <input {...register("text")} type="text" name="text" id="text" className="form-control"/>
