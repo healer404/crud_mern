@@ -1,17 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import {TodoForm} from "./TodoForm";
+import {useRouteMatch, useHistory} from 'react-router-dom';
+import {getTodo, updateTodo} from "./api";
 
 export const EditTodo = () => {
   const [todo, setTodo] = useState();
+  const match = useRouteMatch();
+  const history = useHistory();
 
   useEffect(() => {
-    setTodo({
-      text: 'food'
-    })
+    const fetchTodo = async () => {
+      const todo = await getTodo(match.params.id)
+      setTodo(todo)
+    }
+    fetchTodo()
   }, []);
 
-  const onSubmit = (data) => {
-    alert(JSON.stringify(data));
+  const onSubmit = async (data) => {
+    await updateTodo(data, match.params.id)
+    history.push('/')
   }
 
   return todo ? (
