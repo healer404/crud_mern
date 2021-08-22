@@ -4,8 +4,8 @@ import {useRouteMatch, useHistory} from 'react-router-dom';
 import {getTodo, updateTodo} from "./api";
 
 export const EditTodo = () => {
-  const [todo, setTodo] = useState();
   const match = useRouteMatch();
+  const [todo, setTodo] = useState();
   const history = useHistory();
 
   useEffect(() => {
@@ -25,8 +25,8 @@ export const EditTodo = () => {
       <div className="container">
         <div className="mt-3">
           <h3>Edit ToDo Item</h3>
-          <TodoForm todo={todo} onSubmit={onSubmit}></TodoForm>
+          <TodoForm todo={todo} onSubmit={onSubmit}/>
         </div>
       </div>
-  ) : (<div>Loading...</div>)
+  ) : (<div>Loading...</div>);
 };

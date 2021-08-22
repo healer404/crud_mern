@@ -38,5 +38,5 @@ export const TodoList = () => {
           </table>
         </div>
       </div>
-  )
-}
+  );
+};

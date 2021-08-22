@@ -16,7 +16,7 @@ export const CreateTodo = () => {
         <div className="container">
           <div className="mt-3">
             <h3>Create ToDo Item</h3>
-            <TodoForm onSubmit={onSubmit}></TodoForm>
+            <TodoForm onSubmit={onSubmit}/>
           </div>
         </div>
   );
